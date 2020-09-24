@@ -50,6 +50,8 @@ public class Customer {
         for (Address a : addresses) {
             double distance = a.getCoordinates().companyDistanceTo(d.getCoordinates());
             if (distance < bestDistance) {
+                //update the best distance
+                bestDistance = distance;
                 bestAddress = a;
             }
         }

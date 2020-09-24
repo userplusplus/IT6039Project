@@ -19,7 +19,7 @@ public class Depot {
     }
     
     /** 
-     * @return returns 
+     * @return returns the name of the depot
      */
     public String getName() {
         return name.toString();
