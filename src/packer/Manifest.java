@@ -21,10 +21,16 @@ public class Manifest {
         byWeight = new TreeSet<>(new ProductWeightComparator());
     }
     
+    //Gives you the option to just specify the product
     public void addProduct(Product p) {
         addProduct(p,1);
     }
     
+    /**
+     * Specify the product and how many to add
+     * @param p
+     * @param quantity
+     */
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
             quantities.put(p,quantities.get(p)*quantity);
@@ -37,6 +43,10 @@ public class Manifest {
         }
     }
     
+    /**
+     * Remove the specified product
+     * @param p
+     */
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) > 0) {
             quantities.put(p,quantities.get(p)-1);
@@ -49,6 +59,10 @@ public class Manifest {
         }
     }
     
+    /**
+     * 
+     * @return weight
+     */
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
@@ -57,6 +71,11 @@ public class Manifest {
         return weight;
     }
     
+    /**
+     * 
+     * @param weight
+     * @return
+     */
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
             if (p.getWeight() <= weight) {
@@ -66,10 +85,19 @@ public class Manifest {
         return null;
     }
     
+    /**
+     * 
+     * @return
+     */
     public boolean isEmpty() {
         return byWeight.isEmpty();
     }
     
+    /**
+     * 
+     * @param p
+     * @return
+     */
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
@@ -85,6 +113,10 @@ public class Manifest {
         return result.substring(0, result.length()-1);
     }
     
+    /**
+     * Check for fragiles
+     * @return boolean
+     */
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
@@ -93,5 +125,11 @@ public class Manifest {
         }
         return false;
     }
+
+    double getWeight() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+}
     
 

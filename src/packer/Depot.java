@@ -8,6 +8,11 @@ public class Depot {
     private String name;
     private Address address;
 
+    /**
+     * Depot object
+     * @param name
+     * @param address
+     */
     public Depot(String name, Address address) {
         this.name = name;
         this.address = address;

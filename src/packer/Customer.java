@@ -12,20 +12,38 @@ public class Customer {
     private String name;
     private List<Address> addresses;
 
+    /**
+     * Customer arrayList
+     * @param name
+     * @param address
+     */
     public Customer(String name, Address address) {
         addresses = new ArrayList<>();
         this.name = name;
         this.addresses.add(address);
     }
     
+    /**
+     * 
+     * @param address
+     */
     public void addAddress(Address address) {
         this.addresses.add(address);
     }
     
+    /**
+     * 
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Get the closest address to the depot
+     * @param d
+     * @return closest address
+     */
     public Address getClosestAddressTo(Depot d) {
         double bestDistance = Double.MAX_VALUE;
         Address bestAddress = null;

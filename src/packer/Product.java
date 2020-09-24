@@ -11,6 +11,13 @@ public class Product {
     private boolean hazardous;
     private boolean fragile;
 
+    /**
+     * Product object
+     * @param name
+     * @param weight
+     * @param hazardous
+     * @param fragile
+     */
     public Product(String name, int weight, boolean hazardous, boolean fragile) {
         this.name = name;
         this.weight = weight;

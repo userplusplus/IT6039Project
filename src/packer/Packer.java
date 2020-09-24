@@ -9,6 +9,13 @@ import java.util.List;
  */
 public class Packer {
 
+    /**
+     * Method for packing the products into boxes
+     * @param c specified customer
+     * @param d chosen depot
+     * @param m manifest data
+     * @return number of packed boxed
+     */
     public static List<Box> packProducts(Customer c, Depot d, Manifest m) {
         List<Box> packedBoxes = new ArrayList<>();
         Box b = null;
