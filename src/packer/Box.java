@@ -9,6 +9,7 @@ public class Box {
     private Manifest contents;
     private Customer customer;
     private Depot depot; 
+    private int boxMaxWeight = 20;
 
     /**
      * 
@@ -81,7 +82,7 @@ public class Box {
      * @return boolean 
      */
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        return p.getWeight() < boxMaxWeight;
     }
     
     /**
@@ -91,7 +92,7 @@ public class Box {
      * @return boolean
      */
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < boxMaxWeight;
     }
     
     /**
@@ -99,7 +100,7 @@ public class Box {
      * @return capacity left
      */
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return boxMaxWeight - this.getWeight();
     }
     
     /**
