@@ -34,7 +34,7 @@ public class Box {
     
     
     /**
-     * addProduct override for adding multiple products
+     * addProduct method instance for adding multiple products
      * @param product
      * @param quantity
      */
@@ -78,7 +78,7 @@ public class Box {
     
     /**
      * Check to see if an item (p) can fit into the box
-     * @param p
+     * @param p product
      * @return boolean 
      */
     public boolean canFit(Product p) {
@@ -87,7 +87,7 @@ public class Box {
     
     /**
      * Check to see if the items (p) can fit into the box
-     * @param p
+     * @param p product
      * @param quantity
      * @return boolean
      */
