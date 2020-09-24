@@ -138,16 +138,6 @@ public class Manifest {
         }
         return false;
     }
-
-    double getWeight() {
-        double w = 0;
-        
-        for (Product p : quantities.keySet()) {
-             w += p.getWeight();
-        }
-       return w;
-    }
-
 }
     
 

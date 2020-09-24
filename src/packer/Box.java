@@ -78,7 +78,7 @@ public class Box {
      * @return weight
      */
     public double getWeight() {
-        return contents.getWeight();
+        return contents.getTotalWeight();
     }
     
     /**
@@ -129,6 +129,6 @@ public class Box {
      * @return boolean
      */
     public boolean isHeavy() {
-        return contents.getWeight() > heavyLabelWeight;
+        return contents.getTotalWeight() > heavyLabelWeight;
     }
 }

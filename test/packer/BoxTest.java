@@ -19,8 +19,8 @@ public class BoxTest {
     Product p1 = new Product("Tennis Ball",1,false,false);
     Product p2 = new Product("Tennis Racket",3,false,false);
     Product phazard = new Product("TNT",5,true,false);
-    Product pfragile = new Product("Antique Statue",10,false,true);
-    Product pheavy = new Product("Heavy Antique Statue",100,false,false);
+    Product pfragile = new Product("Antique Vase",10,false,true);
+    Product pheavy = new Product("Heavy Statue",15,false,false);
     
     Coordinates c1 = new Coordinates(30,40);
     Coordinates c2 = new Coordinates(300,400);
@@ -118,6 +118,49 @@ public class BoxTest {
             "Citadel City\n" +
             "A111\n" +
             "Tennis Ball x 1\n", b2.getLabel());
+        
+        //has hazardous items and non hazardous items, flag still shows
+    }
+    
+    /**
+     * Test of getLabel method, of class Box.
+     * Checking for fragile tag added.
+     */
+    @Test
+    public void testGetLabelFragile() {
+        System.out.println("getLabelFragile");
+        
+        //has hazard
+        Box b = new Box(cu1, d1);
+        b.addProduct(pfragile);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Antique Vase x 1\n" +
+            "FRAGILE\n", b.getLabel());
+        
+        //not fragile
+        Box b2 = new Box(cu1, d1);
+        b2.addProduct(p1);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Tennis Ball x 1\n", b2.getLabel());
+        
+        //has fragile items and non fragile items, flag still shows
+        b.addProduct(p1);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Antique Vase x 1\n" +
+            "Tennis Ball x 1\n" +
+            "FRAGILE\n", b.getLabel());
     }
     
     /**
@@ -128,7 +171,38 @@ public class BoxTest {
     public void testGetLabelHeavy() {
         System.out.println("getLabelHeavy");
         
+        //not heavy
         Box b = new Box(cu1, d1);
+        b.addProduct(phazard);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "TNT x 1\n" +
+            "HAZARD\n", b.getLabel());
+        
+        //is heavy
+        Box b2 = new Box(cu1, d1);
+        b2.addProduct(p1, 18);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Tennis Ball x 18\n" +
+            "HEAVY\n", b2.getLabel());
+        
+        //not heavy
+        Box b3 = new Box(cu1, d1);
+        b3.addProduct(pfragile);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Antique Vase x 1\n" +
+            "FRAGILE\n", b3.getLabel());
     }
     
 }
