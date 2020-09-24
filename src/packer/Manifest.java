@@ -33,7 +33,7 @@ public class Manifest {
      */
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
-            quantities.put(p,quantities.get(p)*quantity);
+            quantities.put(p,quantities.get(p)+ quantity);
         }
         else {
             quantities.put(p,quantity);
@@ -114,12 +114,25 @@ public class Manifest {
     }
     
     /**
-     * Check for fragiles
+     * Check for if fragile
      * @return boolean
      */
     public boolean hasFragileItems() {
         for (Product p : quantities.keySet()) {
             if (p.isFragile()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Check for hazards
+     * @return boolean
+     */
+    public boolean hasHazardousItems() {
+        for (Product p : quantities.keySet()) {
+            if (p.isHazardous()) {
                 return true;
             }
         }

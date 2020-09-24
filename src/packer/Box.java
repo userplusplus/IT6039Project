@@ -39,7 +39,7 @@ public class Box {
      * @param quantity
      */
     public void addProduct(Product product, int quantity) {
-        if (canFit(product,quantity)); {
+        if (canFit(product,quantity)) {
             contents.addProduct(product, quantity);
         }
     }
@@ -59,11 +59,15 @@ public class Box {
         if (this.isFragile()) {
             label.append("FRAGILE\n");
         }
+        if (this.isHazardous()) {
+            label.append("HAZARDOUS\n");
+        }
+        if (this.isFragile()) {
+            label.append("FRAGILE\n");
+        }
         return label.toString();
     }
 
-    //Has no javadoc popup when using /** */
-    //returns the label??? why
     public String toString() {
         return getLabel();
     }
@@ -116,6 +120,6 @@ public class Box {
      * @return boolean
      */
     public boolean isHazardous() {
-        return false;
+        return contents.hasHazardousItems();
     }
 }
