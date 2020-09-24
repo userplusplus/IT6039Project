@@ -91,11 +91,44 @@ public class BoxTest {
     }
     
     /**
-     * Test of addProduct (multiple quantity) method, of class Box.
+     * Test of getLabel method, of class Box.
+     * Checking for hazard tag added.
      */
     @Test
     public void testGetLabelHazard() {
-        System.out.println("addProductMultiple");
+        System.out.println("getLabelHazard");
+        
+        //has hazard
+        Box b = new Box(cu1, d1);
+        b.addProduct(phazard);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "TNT x 1\n" +
+            "HAZARD\n", b.getLabel());
+        
+        //no hazard
+        Box b2 = new Box(cu1, d1);
+        b2.addProduct(p1);
+        assertEquals("Awesome Name\n" +
+            "2 Second St\n" +
+            "Aplace\n" +
+            "Citadel City\n" +
+            "A111\n" +
+            "Tennis Ball x 1\n", b2.getLabel());
+    }
+    
+    /**
+     * Test of getLabel method, of class Box.
+     * Checking for heavy tag added.
+     */
+    @Test
+    public void testGetLabelHeavy() {
+        System.out.println("getLabelHeavy");
+        
+        Box b = new Box(cu1, d1);
     }
     
 }

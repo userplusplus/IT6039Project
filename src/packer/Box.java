@@ -10,6 +10,7 @@ public class Box {
     private Customer customer;
     private Depot depot; 
     private int boxMaxWeight = 20;
+    private int heavyLabelWeight = 15;
 
     /**
      * 
@@ -60,10 +61,10 @@ public class Box {
             label.append("FRAGILE\n");
         }
         if (this.isHazardous()) {
-            label.append("HAZARDOUS\n");
+            label.append("HAZARD\n");
         }
-        if (this.isFragile()) {
-            label.append("FRAGILE\n");
+        if (this.isHeavy()) {
+            label.append("HEAVY\n");
         }
         return label.toString();
     }
@@ -121,5 +122,13 @@ public class Box {
      */
     public boolean isHazardous() {
         return contents.hasHazardousItems();
+    }
+    
+    /**
+     * Check if the box should be classified as past the maximum weight limit
+     * @return boolean
+     */
+    public boolean isHeavy() {
+        return contents.getWeight() > heavyLabelWeight;
     }
 }

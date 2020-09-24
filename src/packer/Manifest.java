@@ -140,7 +140,12 @@ public class Manifest {
     }
 
     double getWeight() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double w = 0;
+        
+        for (Product p : quantities.keySet()) {
+             w += p.getWeight();
+        }
+       return w;
     }
 
 }
