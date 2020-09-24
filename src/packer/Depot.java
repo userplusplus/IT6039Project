@@ -18,8 +18,11 @@ public class Depot {
         this.address = address;
     }
     
+    /** 
+     * @return returns 
+     */
     public String getName() {
-        return address.toString();
+        return name.toString();
     }
     
     public Coordinates getCoordinates() {
