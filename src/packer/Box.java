@@ -76,16 +76,6 @@ public class Box {
     }
     
     /**
-     * 
-     * @param product
-     */
-    public void addProduct(Product product) {
-        if (canFit(product)) {
-            contents.addProduct(product, 1);
-        }
-    }
-    
-    /**
      * Check to see if an item (p) can fit into the box
      * @param p
      * @return boolean 
