@@ -21,6 +21,7 @@ public class BoxTest {
     Product phazard = new Product("TNT",5,true,false);
     Product pfragile = new Product("Antique Vase",10,false,true);
     Product pheavy = new Product("Heavy Statue",15,false,false);
+    Product p2big = new Product("Very Heavy Statue",1000,false,false);
     
     Coordinates c1 = new Coordinates(30,40);
     Coordinates c2 = new Coordinates(300,400);
@@ -203,6 +204,31 @@ public class BoxTest {
             "A111\n" +
             "Antique Vase x 1\n" +
             "FRAGILE\n", b3.getLabel());
+    }
+    
+    /**
+     * Test of getLabel method, of class Box.
+     * Checking if you can add products which would go beyond the limits of the
+     * box.
+     */
+    @Test
+    public void testCanFit(){
+        System.out.println("canFit");
+        
+        //can fit, multiple items
+        Box fullBox = new Box(cu1, d1);
+        fullBox.addProduct(p2, 5);
+        assertEquals(true, fullBox.canFit(p1, 5));
+        
+        //cant fir, multiple items
+        assertEquals(false, fullBox.canFit(p2, 5));
+        
+        //cant fit one large item (weight 1000)
+        Box emptyBox = new Box(cu1, d1);
+        assertEquals(false, emptyBox.canFit(p2big, 1));
+        
+        //can fit group of small items int box
+        assertEquals(true, emptyBox.canFit(p1, 5));
     }
     
 }

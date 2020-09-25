@@ -87,7 +87,7 @@ public class Box {
      * @return boolean 
      */
     public boolean canFit(Product p) {
-        return p.getWeight() < boxMaxWeight;
+        return p.getWeight() < this.remainingCapacity();
     }
     
     /**
@@ -97,7 +97,7 @@ public class Box {
      * @return boolean
      */
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < boxMaxWeight;
+        return (p.getWeight() * quantity) <= this.remainingCapacity();
     }
     
     /**
@@ -105,6 +105,7 @@ public class Box {
      * @return capacity left
      */
     public double remainingCapacity() {
+        System.out.println(this.getWeight());
         return boxMaxWeight - this.getWeight();
     }
     
