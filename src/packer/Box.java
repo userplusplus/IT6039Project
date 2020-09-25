@@ -13,7 +13,7 @@ public class Box {
     private int heavyLabelWeight = 15;
 
     /**
-     * 
+     * Box constructor
      * @param customer
      * @param depot
      */
@@ -69,13 +69,17 @@ public class Box {
         return label.toString();
     }
 
+    /**
+     * 
+     * @return label of the box as a string
+     */
     public String toString() {
         return getLabel();
     }
     
     /**
      * 
-     * @return weight
+     * @return weight as a double
      */
     public double getWeight() {
         return contents.getTotalWeight();
@@ -105,7 +109,6 @@ public class Box {
      * @return capacity left
      */
     public double remainingCapacity() {
-        System.out.println(this.getWeight());
         return boxMaxWeight - this.getWeight();
     }
     

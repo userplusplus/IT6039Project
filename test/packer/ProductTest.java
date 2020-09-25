@@ -32,7 +32,10 @@ public class ProductTest {
         System.out.println("Testing Product class...");
     }
 
-
+    /**
+     * Test of equals method, of class product.
+     * Checking for boolean return to be true when products are the same, else false.
+     */
     @Test
     public void testEquals() {
         assertEquals(true, a1.equals(a1));
@@ -49,7 +52,12 @@ public class ProductTest {
         assertEquals(false, b3.equals(a3));
         assertEquals(false, b4.equals(a4)); 
     }
-
+    
+    /**
+     * Test of getWeight method, of class product.
+     * Checking for int to match what is specified in the constructor of 
+     * the product.
+     */
     @Test
     public void testGetWeight() {
         assertEquals(2, a2.getWeight());
@@ -57,12 +65,22 @@ public class ProductTest {
         assertEquals(4, a4.getWeight());
     }
 
+    /**
+     * Test of getWeight method, of class product.
+     * Checking for int to match what is specified in the constructor of 
+     * the product.
+     */
     @Test
     public void testIsHazardous() {
         assertEquals(true,a1.isHazardous());
         assertEquals(false,a3.isHazardous());
     }
 
+    /**
+     * Test of isFragile method, of class product.
+     * Checking for boolean to match what is specified in the constructor of 
+     * the product.
+     */
     @Test
     public void testIsFragile() {
         assertEquals(true,a1.isFragile());

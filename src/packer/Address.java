@@ -10,7 +10,15 @@ public class Address {
     private String city;
     private String postcode;
     private Coordinates coordinates;
-
+    
+    /**
+     * Address constructor
+     * @param street
+     * @param suburb
+     * @param city
+     * @param postcode
+     * @param coordinates
+     */
     public Address(String street, String suburb, String city, String postcode, Coordinates coordinates) {
         this.street = street;
         this.suburb = suburb;
@@ -30,7 +38,7 @@ public class Address {
                 postcode;
     }
     /**
-     * @return the coordinates
+     * @return the coordinates of the address
      */
     public Coordinates getCoordinates() {
         return coordinates;

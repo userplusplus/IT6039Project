@@ -21,7 +21,7 @@ public class Coordinates {
 
     /**
      * 
-     * @return
+     * @return x value as double
      */
     public double getX() {
         return x;
@@ -29,7 +29,7 @@ public class Coordinates {
 
     /**
      * 
-     * @return
+     * @return y value as double
      */
     public double getY() {
         return y;

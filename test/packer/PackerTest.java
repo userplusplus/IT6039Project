@@ -36,6 +36,10 @@ public class PackerTest {
         System.out.println("Testing Packer class...");
     }
     
+    /**
+     * Test of packProducts method, of class packer.
+     * Checking for products to be 'packed' into boxes appropriately.
+     */
     @Test
     public void testPacker() {
         System.out.println("testPacker");

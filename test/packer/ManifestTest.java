@@ -28,6 +28,10 @@ public class ManifestTest {
         System.out.println("Testing Manifest class...");
     }
     
+    /**
+     * Test of addProduct method, of class manifest.
+     * Checking for products added properly when done one at a time.
+     */
     @Test
     public void testAddProductSingle() {
         System.out.println("AddProductSingle");
@@ -43,6 +47,10 @@ public class ManifestTest {
         assertEquals("TNT x 1", m2.toString());
     }
     
+    /**
+     * Test of addProduct method, of class manifest.
+     * Checking for products added properly when added in multiples.
+     */
     @Test
     public void testAddProductMultiple() {
         System.out.println("AddProductMultiple");
@@ -56,6 +64,10 @@ public class ManifestTest {
         assertEquals("Tennis Ball x 10\nTennis Racket x 2", m.toString());
     }
     
+    /**
+     * Test of removeProduct method, of class manifest
+     * checking for appropriate removal of product instances
+     */
     @Test
     public void testRemoveProduct() {
         System.out.println("RemoveProduct");
@@ -74,6 +86,10 @@ public class ManifestTest {
         m.removeProduct(p1);
     }
     
+    /**
+     * Test of getTotalWeight method, of class manifest.
+     * Checking for weights of all products in manifest to be calculated properly.
+     */
     @Test
     public void testGetTotalWeight() {
         System.out.println("testPacker");
@@ -87,6 +103,10 @@ public class ManifestTest {
         assertEquals(11, m.getTotalWeight(), 0.0);
     }
     
+    /**
+     * Test of getHeaviestUnder method, of class manifest.
+     * Checking for return of correct product by weight.
+     */
     @Test
     public void testGetHeaviestUnder() {
         System.out.println("GetHeaviestUnder");
@@ -111,6 +131,10 @@ public class ManifestTest {
         assertEquals(pfragile, m.getHeaviestUnder(12));
     }
     
+    /**
+     * Test of isEmpty method, of class manifest.
+     * Checking for boolean return to true when manifest has no products, vice versa.
+     */
     @Test
     public void testIsEmpty() {
         System.out.println("IsEmpty");
@@ -127,6 +151,10 @@ public class ManifestTest {
         
     }
     
+    /**
+     * Test of containsProduct method, of class manifest.
+     * Checking for boolean return to true when manifest contains the product, vice versa.
+     */
     @Test
     public void testContainsProduct() {
         System.out.println("ContainsProduct");

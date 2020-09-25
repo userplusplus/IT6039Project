@@ -29,6 +29,10 @@ public class Depot {
         return this.address.getCoordinates();
     }
     
+    /**
+     * 
+     * @return depot name as string 
+     */
     public String toString() {
         return this.getName();
     }

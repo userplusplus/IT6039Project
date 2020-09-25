@@ -24,7 +24,7 @@ public class Customer {
     }
     
     /**
-     * 
+     * add address to customer instance
      * @param address
      */
     public void addAddress(Address address) {
@@ -33,7 +33,7 @@ public class Customer {
     
     /**
      * 
-     * @return
+     * @return customer name as string
      */
     public String getName() {
         return name;
@@ -58,6 +58,10 @@ public class Customer {
         return bestAddress;
     }
 
+    /**
+     * 
+     * @return  name of the customer
+     */
     public String toString() {
         return this.getName();
     }

@@ -87,8 +87,9 @@ public class BoxTest {
             "Aplace\n" +
             "Citadel City\n" +
             "A111\n" +
+            "Tennis Ball x 10\n" +
             "Tennis Racket x 2\n" +
-            "Tennis Ball x 10\n", b.getLabel());
+            "HEAVY\n", b.getLabel());
     }
     
     /**
@@ -159,8 +160,8 @@ public class BoxTest {
             "Aplace\n" +
             "Citadel City\n" +
             "A111\n" +
-            "Antique Vase x 1\n" +
             "Tennis Ball x 1\n" +
+            "Antique Vase x 1\n" +
             "FRAGILE\n", b.getLabel());
     }
     

@@ -47,16 +47,23 @@ public class Product {
     }
 
     /**
-     * @return the fragile
+     * @return the fragile boolean property of the product
      */
     public boolean isFragile() {
         return fragile;
     }
-
+    
+    /**
+     * @return the name of the product
+     */
     public String toString() {
         return this.getName();
     }
     
+    /**
+     * @param o object to be checked against product
+     * @return boolean if o == product
+     */
     public boolean equals(Object o) {
         if (!(o instanceof Product)) {
             return false;

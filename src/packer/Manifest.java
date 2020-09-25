@@ -28,8 +28,8 @@ public class Manifest {
     
     /**
      * Specify the product and how many to add
-     * @param p
-     * @param quantity
+     * @param p product to add
+     * @param quantity how many to add of the product
      */
     public void addProduct(Product p, int quantity) {
         if (quantities.containsKey(p)) {
@@ -45,7 +45,7 @@ public class Manifest {
     
     /**
      * Remove the specified product
-     * @param p
+     * @param p product to be removed
      */
     public void removeProduct(Product p) {
         if (quantities.containsKey(p) && quantities.get(p) == 1) {
@@ -59,7 +59,7 @@ public class Manifest {
     }
     
     /**
-     * 
+     * get the total weight of all members within the manifest
      * @return weight
      */
     public double getTotalWeight() {
@@ -71,9 +71,9 @@ public class Manifest {
     }
     
     /**
-     * 
+     * return the heaviest product within the manifest under a given weight
      * @param weight
-     * @return
+     * @return heaviest product by weight
      */
     public Product getHeaviestUnder(double weight) {
         for (Product p : byWeight) {
@@ -85,7 +85,7 @@ public class Manifest {
     }
     
     /**
-     * 
+     * checks weight to see if the manifest is empty
      * @return
      */
     public boolean isEmpty() {
@@ -93,14 +93,17 @@ public class Manifest {
     }
     
     /**
-     * 
+     * checks manifest for instance of given product p
      * @param p
-     * @return
+     * @return boolean 
      */
     public boolean containsProduct(Product p) {
         return quantities.containsKey(p) && quantities.get(p) > 0;
     }
     
+    /**
+     * returns formatted version of manifest that includes quantity
+     */
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Product p : quantities.keySet()) {
