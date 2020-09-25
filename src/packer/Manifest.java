@@ -48,14 +48,13 @@ public class Manifest {
      * @param p
      */
     public void removeProduct(Product p) {
-        if (quantities.containsKey(p) && quantities.get(p) > 0) {
-            quantities.put(p,quantities.get(p)-1);
-        }
-        if (quantities.get(p) == 0) {
+        if (quantities.containsKey(p) && quantities.get(p) == 1) {
             quantities.remove(p);
-        }
-        if (quantities.containsKey(p)) {
             byWeight.remove(p);
+        }else if (quantities.containsKey(p) && quantities.get(p) > 0) {
+            quantities.put(p,quantities.get(p)-1);
+        } else {
+            System.out.println("An excpetion occured while trying to remove a product");
         }
     }
     
@@ -66,7 +65,7 @@ public class Manifest {
     public double getTotalWeight() {
         double weight = 0;
         for (Product p : quantities.keySet()) {
-            weight = quantities.get(p) * p.getWeight();
+            weight += quantities.get(p) * p.getWeight();
         }
         return weight;
     }

@@ -19,6 +19,9 @@ public class Address {
         this.coordinates = coordinates;
     }
 
+    /**
+     * @return get address as string but formatted with whitespace.
+     */
     public String toString() {
         return 
                 street + "\n" +

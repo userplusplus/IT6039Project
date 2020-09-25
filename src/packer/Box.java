@@ -130,6 +130,6 @@ public class Box {
      * @return boolean
      */
     public boolean isHeavy() {
-        return contents.getTotalWeight() > heavyLabelWeight;
+        return contents.getTotalWeight() >= heavyLabelWeight;
     }
 }
