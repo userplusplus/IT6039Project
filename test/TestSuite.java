@@ -13,7 +13,7 @@ import packer.DepotTest;
 import packer.ProductTest;
 
 import packer.BoxTest;
-
+import packer.ManifestTest;
 
 /**
  *
@@ -27,7 +27,8 @@ import packer.BoxTest;
     ProductTest.class,
     CustomerTest.class,
     
-    BoxTest.class
+    BoxTest.class,
+    ManifestTest.class
 })
 
 public class TestSuite {
